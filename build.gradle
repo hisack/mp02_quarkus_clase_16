@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'io.quarkus' version '2.10.2.Final'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+ext{
+    //helidonversion = '2.4.2'
+    quarkusVersion = '2.10.2.Final'
+}
+repositories {
+    mavenCentral()
+}
+
+
+
+dependencies {
+
+    implementation enforcedPlatform("io.quarkus:quarkus-universe-bom:${project.quarkusVersion}")
+    implementation group: 'io.quarkus', name: 'quarkus-arc'
+    implementation group: 'io.quarkus', name: 'quarkus-resteasy-reactive'
+}
+
+test {
+    useJUnitPlatform()
+}
